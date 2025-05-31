@@ -7,14 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="module">
-        // import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-        // const supabaseUrl = 'SEU_SUPABASE_URL'; 
-        // const supabaseKey = 'SUA_SUPABASE_ANON_KEY';
-        // let supabase = null;
-        // if (supabaseUrl && supabaseKey && supabaseUrl !== 'SEU_SUPABASE_URL') {
-        //    supabase = createClient(supabaseUrl, supabaseKey);
-        // }
-        // window.supabaseClient = supabase; // Para acesso global, se necessário
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+        
+        // Suas informações do Supabase
+        const supabaseUrl = 'https://pzyvzviwirzerefgrkjr.supabase.co'; 
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6eXZ6dml3aXJ6ZXJlZmdya2pyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg2MzQ3MjMsImV4cCI6MjA2NDIxMDcyM30.Q3mCUjc8VuexMqtIWJBoyTGy_0PIJK4nKM8yUpHMi9k';
+        
+        let supabase = null;
+        if (supabaseUrl && supabaseKey) { // Verifica se as variáveis não estão vazias
+           try {
+               supabase = createClient(supabaseUrl, supabaseKey);
+               console.log("Supabase client inicializado com sucesso.");
+           } catch (error) {
+               console.error("Erro ao inicializar o Supabase client:", error);
+               console.warn("A funcionalidade de salvar CNPJ estará desabilitada devido a erro na inicialização do Supabase.");
+           }
+        } else {
+           console.warn("Supabase URL ou Key não fornecidas. A funcionalidade de salvar CNPJ estará desabilitada.");
+        }
+        window.supabaseClient = supabase; // Para acesso global, se necessário (pode ser null se a inicialização falhar)
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
