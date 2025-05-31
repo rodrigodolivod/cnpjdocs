@@ -6,6 +6,10 @@
     <title>CNPJ DOCS - Seu Hub de Documentos Empresariais</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8884170905225213"
+     crossorigin="anonymous"></script>
+
     <script type="module">
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
         
@@ -50,9 +54,19 @@
         </div>
     </header>
 
-    <main class="container mx-auto max-w-6xl p-4 md:p-6 space-y-10"> <section class="bg-gray-200 p-6 rounded-xl shadow-md text-center"> <h2 class="text-xl font-semibold mb-2 text-gray-700">Publicidade</h2>
-            <div id="ad-placeholder-top" class="min-h-[90px] bg-gray-300 rounded-lg flex items-center justify-center">
-                <p class="text-gray-600">Espaço reservado para anúncios (Google AdSense)</p>
+    <main class="container mx-auto max-w-6xl p-4 md:p-6 space-y-10">
+        <section class="p-6 rounded-xl text-center">
+            <h2 class="text-xl font-semibold mb-2 text-gray-700 sr-only">Publicidade Topo</h2>
+            <div id="ad-placeholder-top" class="w-full min-h-[90px] bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+                <ins class="adsbygoogle"
+                     style="display:block;"
+                     data-ad-client="ca-pub-8884170905225213"
+                     data-ad-slot="2108374696"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </section>
 
@@ -146,10 +160,18 @@
                 </div>
             </div>
             
-            <div class="my-10 bg-gray-200 p-6 rounded-xl shadow-md text-center">
-                <h2 class="text-xl font-semibold mb-2 text-gray-700">Publicidade</h2>
-                <div id="ad-placeholder-section2-mid" class="min-h-[90px] bg-gray-300 rounded-lg flex items-center justify-center">
-                    <p class="text-gray-600">Espaço reservado para anúncios (Google AdSense)</p>
+            <div class="my-10 text-center">
+                <h2 class="text-xl font-semibold mb-2 text-gray-700 sr-only">Publicidade Seção 2</h2>
+                <div id="ad-placeholder-section2-mid" class="w-full min-h-[90px] bg-gray-200 rounded-lg overflow-hidden inline-block">
+                     <ins class="adsbygoogle"
+                         style="display:block;"
+                         data-ad-client="ca-pub-8884170905225213"
+                         data-ad-slot="2108374696" 
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 </div>
             </div>
 
@@ -250,9 +272,17 @@
             <div id="sefaz-info" class="mt-4 text-sm text-gray-700 min-h-[1.25rem]"></div>
         </section>
 
-        <section class="bg-gray-200 p-6 rounded-xl shadow-md text-center"> <h2 class="text-xl font-semibold mb-2 text-gray-700">Publicidade</h2>
-            <div id="ad-placeholder-mid-page" class="min-h-[90px] bg-gray-300 rounded-lg flex items-center justify-center">
-                <p class="text-gray-600">Espaço reservado para anúncios (Google AdSense)</p>
+        <section class="p-6 rounded-xl text-center"> <h2 class="text-xl font-semibold mb-2 text-gray-700 sr-only">Publicidade Meio da Página</h2>
+            <div id="ad-placeholder-mid-page" class="w-full min-h-[90px] bg-gray-200 rounded-lg overflow-hidden inline-block">
+                 <ins class="adsbygoogle"
+                     style="display:block;"
+                     data-ad-client="ca-pub-8884170905225213"
+                     data-ad-slot="2108374696" 
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </section>
 
@@ -285,10 +315,18 @@
             <div id="suggestion-message" class="text-sm mt-3 min-h-[1.25rem]"></div>
         </section>
 
-        <section class="bg-gray-200 p-6 rounded-xl shadow-md text-center">
-            <h2 class="text-xl font-semibold mb-2 text-gray-700">Publicidade</h2>
-            <div id="ad-placeholder-bottom" class="min-h-[100px] bg-gray-300 rounded-lg flex items-center justify-center">
-                <p class="text-gray-600">Espaço reservado para anúncios (Google AdSense)</p>
+        <section class="p-6 rounded-xl text-center">
+            <h2 class="text-xl font-semibold mb-2 text-gray-700 sr-only">Publicidade Rodapé</h2>
+            <div id="ad-placeholder-bottom" class="w-full min-h-[100px] bg-gray-200 rounded-lg overflow-hidden inline-block">
+                 <ins class="adsbygoogle"
+                     style="display:block;"
+                     data-ad-client="ca-pub-8884170905225213"
+                     data-ad-slot="2108374696" 
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </section>
     </main>
@@ -398,6 +436,11 @@
                 cnpjMessage.textContent = 'Dados carregados com sucesso!';
                 cnpjMessage.className = 'text-sm mt-2 text-green-600 font-medium';
                 closeModal(false, "Dados do CNPJ carregados!");
+
+                if (window.supabaseClient) { 
+                    saveCnpjToSupabase(cnpj, data.razao_social || data.nome_fantasia);
+                }
+
             } catch (error) {
                 cnpjMessage.textContent = error.message;
                 cnpjMessage.className = 'text-sm mt-2 text-red-600 font-medium';
@@ -602,9 +645,8 @@
             const subject = "Sugestão para CNPJ DOCS";
 
             if (suggestion) {
-                // Cria um link mailto para abrir o cliente de e-mail padrão do usuário
                 const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(suggestion)}`;
-                window.location.href = mailtoLink; // Abre o cliente de e-mail
+                window.location.href = mailtoLink; 
 
                 suggestionMessage.textContent = 'Obrigado pela sua sugestão! Por favor, envie o e-mail que foi aberto.';
                 suggestionMessage.className = 'text-sm mt-3 text-green-600 font-medium';
@@ -614,7 +656,7 @@
                 suggestionMessage.textContent = 'Por favor, escreva sua sugestão antes de enviar.';
                 suggestionMessage.className = 'text-sm mt-3 text-red-600 font-medium';
             }
-            setTimeout(() => { suggestionMessage.textContent = ''; }, 7000); // Limpa a mensagem após 7 segundos
+            setTimeout(() => { suggestionMessage.textContent = ''; }, 7000); 
         });
 
 
@@ -710,6 +752,26 @@
                 sefazInfo.textContent = '';
             }
         });
+        
+        // Função para salvar CNPJ no Supabase (descomentada e ativa)
+        async function saveCnpjToSupabase(cnpj, name) {
+            if (!window.supabaseClient) {
+                console.warn("Supabase client não inicializado. Não foi possível salvar o CNPJ.");
+                return;
+            }
+            try {
+                const { data, error } = await window.supabaseClient
+                    .from('consultas_cnpj') // Nome da sua tabela
+                    .insert([
+                        { cnpj: cnpj, nome_empresa: name } 
+                    ]);
+                if (error) throw error;
+                console.log('CNPJ salvo no Supabase:', data);
+            } catch (error) {
+                console.error('Erro ao salvar CNPJ no Supabase:', error.message);
+            }
+        }
+
 
         // --- Inicialização ---
         document.addEventListener('DOMContentLoaded', () => {
